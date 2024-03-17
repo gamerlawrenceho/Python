@@ -1,7 +1,7 @@
 {
     "python.autoComplete.extraPaths": [
         "c:\\users\\user\\appdata\\local\\programs\\python\\python310\\lib\\site-packages",
-        "c:/Users/User/.vscode/extensions/rt-thread.rt-thread-micropython-1.0.11/microExamples/code-completion"
+        "c:/Users/gamer/.vscode/extensions/rt-thread.rt-thread-micropython-1.0.11/microExamples/code-completion"
     ],
     "files.associations": {
         ".mpyproject.json": "jsonc"
@@ -27,5 +27,9 @@
             "command": "extension.executeFile",
             "priority": 3.5
         }
+    ],
+    "python.analysis.extraPaths": [
+        "c:\\users\\user\\appdata\\local\\programs\\python\\python310\\lib\\site-packages",
+        "c:/Users/gamer/.vscode/extensions/rt-thread.rt-thread-micropython-1.0.11/microExamples/code-completion"
     ]
 }
