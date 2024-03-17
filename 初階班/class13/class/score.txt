@@ -1,0 +1,4 @@
+Peter : 100
+Tom : 50
+John : 00
+Rob : 30

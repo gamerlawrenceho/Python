@@ -1,0 +1,4 @@
+You are Lawrence, write?
+I'm Python!
+I'm a robot
+My age is 18
