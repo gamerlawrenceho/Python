@@ -36,9 +36,13 @@ mqClient0.subscribe("lawrence")
 
 gpio = mcu.gpio()
 light_sensor = ADC(0)
-RED = Pin(gpio.D5, Pin.OUT)
-GREEN = Pin(gpio.D6, Pin.OUT)
-BLUE = Pin(gpio.D7, Pin.OUT)
+
+
+LED = mcu.LED(gpio.D5, gpio.D6, gpio.D7, pwm=False)
+
+# RED = Pin(gpio.D5, Pin.OUT)
+# GREEN = Pin(gpio.D6, Pin.OUT)
+# BLUE = Pin(gpio.D7, Pin.OUT)
 m = "off"
 #########################主程式#########################
 while True:
