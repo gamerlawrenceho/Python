@@ -24,7 +24,7 @@ wi.setup(ap_active=False, sta_active=True)  # 設定WIFI模組
 if wi.connect():
     print(f"IP={wi.ip}")  # 連接到伺服器
 
-mqtt_client = mcu.MQTT("Ray", "mqtt.singularinnovation-ai.com", "singular", "Singular#1234")
+mqtt_client = mcu.MQTT("lawrence", "mqtt.singularinnovation-ai.com", "singular", "Singular#1234") # 建立MQTT客戶端
 mqtt_client.connect()   # 建立MQTT客戶端
 mqtt_client.subscribe("lawrence", on_message)   # 訂閱主題
 m = 0 # 初始化消息
