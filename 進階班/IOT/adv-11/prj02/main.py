@@ -27,7 +27,8 @@ if wi.connect():
 mqtt_client = mcu.MQTT("Ray", "mqtt.singularinnovation-ai.com", "singular", "Singular#1234")
 mqtt_client.connect()   # 建立MQTT客戶端
 mqtt_client.subscribe("lawrence", on_message)   # 訂閱主題
-m = "no message"  # 初始化消息
+m = 0 # 初始化消息
+servo = mcu.servo(gpio.D8)  # 建立輪詢器物件
 
 #########################主程式#########################
 while True:
@@ -37,4 +38,5 @@ while True:
     oled.text("topic : lawrence", 0, 10)
     oled.text(f"msg : {m}", 0, 20)
     oled.show()
-    time.sleep(0.1)
+    servo.angle(int(m))
+    time.sleep(1)

@@ -3,25 +3,25 @@ from machine import Pin, I2C
 import dht
 import time
 import mcu
-import json
-import ssd1306
-from machine import ADC
+import json 
+import ssd1306 
+from machine import ADC 
 
 #########################函式與類別定義#########################
 
 #########################宣告與設定#########################
-gpio = mcu.gpio()
-wi = mcu.wifi("SingularClass", "Singular#1234")
-wi.setup(ap_active=False, sta_active=True)
+gpio = mcu.gpio()  # 建立GPIO物件
+wi = mcu.wifi("SingularClass", "Singular#1234")  # 建立WIFI物件
+wi.setup(ap_active=False, sta_active=True)  # 設定WIFI模組
 if wi.connect():
-    print(f"IP={wi.ip}")
+    print(f"IP={wi.ip}")  # 連接到伺服器
 
-mqtt_client = mcu.MQTT("lawrence", "mqtt.singularinnovation-ai.com", "singular", "Singular#1234")
-mqtt_client.connect()
+mqtt_client = mcu.MQTT("lawrence", "mqtt.singularinnovation-ai.com", "singular", "Singular#1234") # 建立MQTT客戶端
+mqtt_client.connect() # 建立MQTT客戶端
 
-i2c = I2C(scl=Pin(gpio.D1), sda=Pin(gpio.D2))
-oled = ssd1306.SSD1306_I2C(128, 64, i2c)
-d = dht.DHT11(Pin(gpio.D0, Pin.IN))
+i2c = I2C(scl=Pin(gpio.D1), sda=Pin(gpio.D2))  # 建立I2C物件
+oled = ssd1306.SSD1306_I2C(128, 64, i2c)  # 建立OLED物件
+d = dht.DHT11(Pin(gpio.D0, Pin.IN)) # 建立 DHT11 物件
 msg_json = {} # 建立字典
 light_sensor = ADC(0)  # 建立 ADC 物件
 
