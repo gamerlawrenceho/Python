@@ -39,7 +39,7 @@ while True:
         ]
     ).content
     print(msg)
-    result = client.publish("hello", msg)  # 發布訊息
+    result = client.publish("lawrence_AI", msg)  # 發布訊息
     result.wait_for_publish()  # 等待發布完成
 
     # 檢查發布是否成功
